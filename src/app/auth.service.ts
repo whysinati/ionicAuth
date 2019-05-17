@@ -26,11 +26,16 @@ export class AuthService {
     this.url = `${l.protocol}//${host}/api/auth/`;
   }
 
+  register(user: User): Observable<User>{
+    return this.http.post<User>(this.url + 'register', user, httpOptions);
+  }
+
   login(user: User): Observable<User>{
     return this.http.post<User>(this.url + 'login', user, httpOptions);
   }
 
-  test(): string{
-    return 'success!';
+  logout(): Observable<User>{
+    return this.http.delete<User>(this.url + 'logout');
   }
+
 }

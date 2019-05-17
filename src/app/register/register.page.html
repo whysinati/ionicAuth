@@ -1,9 +1,38 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>register</ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>Join!</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-This is a good place to register.
+
+  <!-- <ion-item *ngIf="errorMessage" color="danger">{{ errorMessage }}</ion-item> -->
+
+  <ion-item>
+    <ion-label for="username">Username</ion-label>
+    <ion-input [(ngModel)]="user.username" type="text" name="username" id="username">
+    <ion-item *ngIf="errors.username">{{errors.username.message}}</ion-item>
+  </ion-item>
+
+  <ion-item>
+    <ion-label for="email">Email</ion-label>
+    <ion-input [(ngModel)]="user.email" type="text" name="email" id="email">
+    <ion-item *ngIf="errors.email">{{errors.email.message}}</ion-item>
+  </ion-item>
+
+  <ion-item>
+    <ion-label for="first_name">First Name</ion-label>
+    <ion-input [(ngModel)]="user.first_name" type="text" name="first_name" id="first_name">
+  </ion-item>
+
+  <ion-item>
+    <ion-label for="last_name">Last Name</ion-label>
+    <ion-input [(ngModel)]="user.last_name" type="text" name="last_name" id="last_name">
+  </ion-item>
+
+  <ion-button color="primary" expand="full" (click)="onSubmit()">Register</ion-button>
+  
 </ion-content>
