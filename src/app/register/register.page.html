@@ -7,30 +7,38 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
-  <!-- <ion-item *ngIf="errorMessage" color="danger">{{ errorMessage }}</ion-item> -->
+<ion-content padding>
 
   <ion-item>
-    <ion-label for="username">Username</ion-label>
-    <ion-input [(ngModel)]="user.username" type="text" name="username" id="username">
-    <ion-item *ngIf="errors.username">{{errors.username.message}}</ion-item>
+    <ion-label position="floating">Username</ion-label>
+    <ion-input [(ngModel)]="user.username" type="text" name="username"></ion-input>
+    <div *ngIf="errors.username">{{errors.username.message}}</div>
   </ion-item>
 
   <ion-item>
-    <ion-label for="email">Email</ion-label>
-    <ion-input [(ngModel)]="user.email" type="text" name="email" id="email">
-    <ion-item *ngIf="errors.email">{{errors.email.message}}</ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input [(ngModel)]="user.email" type="email" name="email"></ion-input>
+    <div *ngIf="errors.email">{{errors.email}}</div>
   </ion-item>
 
   <ion-item>
-    <ion-label for="first_name">First Name</ion-label>
-    <ion-input [(ngModel)]="user.first_name" type="text" name="first_name" id="first_name">
+    <ion-label position="floating">First Name</ion-label>
+    <ion-input [(ngModel)]="user.first_name" type="text" name="first_name"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label for="last_name">Last Name</ion-label>
-    <ion-input [(ngModel)]="user.last_name" type="text" name="last_name" id="last_name">
+    <ion-label position="floating">Last Name</ion-label>
+    <ion-input [(ngModel)]="user.last_name" type="text" name="last_name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Password</ion-label>
+    <ion-input [(ngModel)]="user.password" type="password" name="password"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Confirm Password</ion-label>
+    <ion-input [(ngModel)]="user.confirm_password" type="text" name="confirm_password"></ion-input>
   </ion-item>
 
   <ion-button color="primary" expand="full" (click)="onSubmit()">Register</ion-button>
